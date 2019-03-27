@@ -1,9 +1,10 @@
 const express = require('express')
 const nunjucks = require('nunjucks')
+const path = require('path')
 
 const app = express()
 
-nunjucks.configure('src/views', {
+nunjucks.configure(path.resolve(__dirname, 'src', 'views'), {
   autoescape: true,
   express: app,
   watch: true
