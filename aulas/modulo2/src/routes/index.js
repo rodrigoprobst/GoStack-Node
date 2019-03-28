@@ -20,6 +20,8 @@ routes.post(
 
 routes.use('/app', authMiddleware)
 
+routes.get('/app/logout', Controllers.SessionController.destroy)
+
 routes.get('/app/dashboard', (req, res) => {
   return res.render('dashboard')
 })
