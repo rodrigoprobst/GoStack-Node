@@ -7,6 +7,8 @@ const routes = express.Router()
 const Controllers = require('../app/controllers')
 
 routes.get('/app/dashboard', (req, res) => {
+  console.log(req.session.user)
+
   return res.render('dashboard')
 })
 
