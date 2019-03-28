@@ -4,21 +4,27 @@ const upload = require('multer')(multerConfig)
 
 const routes = express.Router()
 
-const authMiddleware = require('../app/middlewares/auth')
-const guestMiddleware = require('../app/middlewares/guest')
+const Middlewares = require('../app/middlewares')
 const Controllers = require('../app/controllers')
 
-routes.get('/', guestMiddleware, Controllers.SessionController.create)
+routes.use((req, res, next) => {
+  res.locals.flashSuccess = req.flash('success')
+  res.locals.flashError = req.flash('error')
+
+  return next()
+})
+
+routes.get('/', Middlewares.guest, Controllers.SessionController.create)
 routes.post('/signin', Controllers.SessionController.store)
 
-routes.get('/signup', guestMiddleware, Controllers.UserController.create)
+routes.get('/signup', Middlewares.guest, Controllers.UserController.create)
 routes.post(
   '/signup',
   upload.single('avatar'),
   Controllers.UserController.store
 )
 
-routes.use('/app', authMiddleware)
+routes.use('/app', Middlewares.auth)
 
 routes.get('/app/logout', Controllers.SessionController.destroy)
 

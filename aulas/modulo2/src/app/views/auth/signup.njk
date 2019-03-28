@@ -2,6 +2,9 @@
 
 {% block body %}
   <form action="/signup" method="POST" enctype="multipart/form-data">
+
+    {% include "_partials/flash.njk" %}
+
     <label for="avatar">
       <img src="/images/avatar.svg" alt="Clique para adicionar uma imagem ao seu perfil!" height="24">
     </label>
