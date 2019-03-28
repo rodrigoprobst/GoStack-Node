@@ -1,10 +1,11 @@
 module.exports = {
   development: {
     dialect: 'postgres',
-    host: '127.0.0.1',
-    username: 'docker',
-    password: 'docker',
-    database: 'gonodemodulo2',
+    host: process.env.PG_HOST,
+    username: process.env.PG_USER,
+    password: process.env.PG_PASS,
+    database: process.env.PG_DB,
+    port: process.env.PG_PORT,
     operatorAliases: false,
     define: {
       timestamps: true,
@@ -13,11 +14,11 @@ module.exports = {
     }
   },
   test: {
-    dialect: 'postgres',
-    host: '127.0.0.1',
-    username: 'docker',
-    password: 'docker',
-    database: 'gonodemodulo2',
+    host: process.env.PG_HOST,
+    username: process.env.PG_USER,
+    password: process.env.PG_PASS,
+    database: process.env.PG_DB,
+    port: process.env.PG_PORT,
     operatorAliases: false,
     define: {
       timestamps: true,
@@ -26,11 +27,11 @@ module.exports = {
     }
   },
   production: {
-    dialect: 'postgres',
-    host: '127.0.0.1',
-    username: 'docker',
-    password: 'docker',
-    database: 'gonodemodulo2',
+    host: process.env.PG_HOST,
+    username: process.env.PG_USER,
+    password: process.env.PG_PASS,
+    database: process.env.PG_DB,
+    port: process.env.PG_PORT,
     operatorAliases: false,
     define: {
       timestamps: true,

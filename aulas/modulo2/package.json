@@ -13,11 +13,12 @@
   },
   "license": "MIT",
   "scripts": {
-    "start": "nodemon src/index.js -e js"
+    "start": "nodemon src/index.js -w .env -w *.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "connect-redis": "^3.4.1",
+    "dotenv": "^7.0.0",
     "express": "^4.16.4",
     "express-session": "^1.15.6",
     "multer": "^1.4.1",

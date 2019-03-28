@@ -3,6 +3,7 @@ const nunjucks = require('nunjucks')
 const path = require('path')
 const session = require('express-session')
 const RedisStore = require('connect-redis')(session)
+require('dotenv').config()
 
 class App {
   constructor () {
@@ -19,21 +20,15 @@ class App {
     this.express.use(
       session({
         name: 'root',
-        secret: 'MyAppSecret',
+        secret: process.env.SESSION_SECRET,
         resave: false,
         saveUninitialized: false,
         store: new RedisStore({
-          host: '127.0.0.1',
-          port: 6379
+          host: process.env.REDIS_HOST,
+          port: process.env.REDIS_PORT
         })
       })
     )
-    this.express.use(function (req, res, next) {
-      if (!req.session) {
-        return next(new Error('oh no')) // handle error
-      }
-      next() // otherwise continue
-    })
   }
   views () {
     nunjucks.configure(path.resolve(__dirname, 'app', 'views'), {
