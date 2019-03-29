@@ -207,6 +207,10 @@ ul.providers {
   margin-top: 0px;
 }
 
+.provider.--new {
+  margin-bottom: 20px;
+}
+
 .provider div {
   display: flex;
   align-items: center;

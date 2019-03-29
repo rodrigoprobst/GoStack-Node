@@ -32,4 +32,9 @@ routes.get('/app/logout', Controllers.SessionController.destroy)
 
 routes.get('/app/dashboard', Controllers.DashboardController.index)
 
+routes.get(
+  '/app/appointments/new/:provider',
+  Controllers.AppointmentController.create
+)
+
 module.exports = routes
