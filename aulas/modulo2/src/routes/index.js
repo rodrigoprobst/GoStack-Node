@@ -36,6 +36,10 @@ routes.get(
   '/app/appointments/new/:provider',
   Controllers.AppointmentController.create
 )
+routes.post(
+  '/app/appointments/new/:provider',
+  Controllers.AppointmentController.store
+)
 
 routes.get('/app/available/:provider', Controllers.AvailableController.index)
 

@@ -1,4 +1,5 @@
-const { User } = require('../models')
+/* eslint-disable camelcase */
+const { User, Appointment } = require('../models')
 
 class AppointmentController {
   async create (req, res) {
@@ -8,7 +9,17 @@ class AppointmentController {
   }
 
   async store (req, res) {
-    return res.redirect('/')
+    const { id: user_id } = req.session.user
+    const { provider: provider_id } = req.params
+    const { date } = req.body
+
+    await Appointment.create({
+      user_id,
+      provider_id,
+      date
+    })
+
+    return res.redirect('/app/dashboard')
   }
 }
 

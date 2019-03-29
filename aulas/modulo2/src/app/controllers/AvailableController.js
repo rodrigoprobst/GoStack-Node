@@ -47,8 +47,8 @@ class AvailableController {
           !appointments.find(
             a =>
               moment(a.date)
-                .format('HH:mm')
-                .tz('America/Sao_Paulo') === time
+                .tz('America/Sao_Paulo')
+                .format('HH:mm') === time
           )
       }
     })
