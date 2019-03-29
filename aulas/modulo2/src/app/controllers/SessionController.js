@@ -13,12 +13,12 @@ class SessionController {
     })
 
     if (!user) {
-      req.flash('error', 'Usuário não encontrado!')
+      req.flash('error', 'Mail not found!')
       return res.redirect('/')
     }
 
     if (!(await user.checkPassword(password))) {
-      req.flash('error', 'Senha Incorreta!')
+      req.flash('error', 'Wrong pass!')
       return res.redirect('/')
     }
 

@@ -2,24 +2,23 @@
 
 {% block body %}
   <form action="/signup" method="POST" enctype="multipart/form-data">
+    <label for="avatar">
+      <img src="/images/avatar.svg" alt="Click to add a profile image!" height="24">
+    </label>
 
     {% include "_partials/flash.njk" %}
 
-    <label for="avatar">
-      <img src="/images/avatar.svg" alt="Clique para adicionar uma imagem ao seu perfil!" height="24">
-    </label>
-
     <input id="avatar" name="avatar" type="file">
-    <input type="text" name="name" id="name" placeholder="Nome Completo">
-    <input type="email" name="email" id="email" placeholder="Seu e-mail">
-    <input type="password" name="password" id="password" placeholder="Senha Secreta">
+    <input type="text" name="name" id="name" placeholder="Full name">
+    <input type="email" name="email" id="email" placeholder="Personal mail">
+    <input type="password" name="password" id="password" placeholder="Password">
 
     <label for="provider">
       <input type="checkbox" name="provider" id="provider" value="1">
       I'm Barber
     </label>
 
-    <button type="submit">Criar Conta</button>
+    <button type="submit">Sign Up</button>
 
     <a href="/">
       Sign In
