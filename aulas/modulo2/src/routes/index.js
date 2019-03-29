@@ -37,4 +37,6 @@ routes.get(
   Controllers.AppointmentController.create
 )
 
+routes.get('/app/available/:provider', Controllers.AvailableController.index)
+
 module.exports = routes
