@@ -1,0 +1,44 @@
+{
+  "name": "gostack-node-1-aula",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rodrigoprobst/GoStack-Node.git"
+  },
+  "author": {
+    "name": "Rodrigo Becker Probst",
+    "email": "becker.rodrigo@outlook.com",
+    "web": "https://www.instagram.com/probst.rodrigo/"
+  },
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon src/index.js -w .env -w *.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-flash": "^0.1.1",
+    "connect-redis": "^3.4.1",
+    "dotenv": "^7.0.0",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "moment": "^2.24.0",
+    "moment-timezone": "^0.5.23",
+    "multer": "^1.4.1",
+    "nunjucks": "^3.2.0",
+    "pg": "^7.9.0",
+    "require-dir": "^1.2.0",
+    "sequelize": "^5.2.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.15.3",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-react": "^7.12.4",
+    "eslint-plugin-standard": "^4.0.0",
+    "nodemon": "^1.18.10",
+    "sequelize-cli": "^5.4.0"
+  }
+}
