@@ -14,6 +14,8 @@ routes.use((req, res, next) => {
   return next()
 })
 
+routes.get('/files/:file', Controllers.FileController.show)
+
 routes.get('/', Middlewares.guest, Controllers.SessionController.create)
 routes.post('/signin', Controllers.SessionController.store)
 
@@ -28,8 +30,6 @@ routes.use('/app', Middlewares.auth)
 
 routes.get('/app/logout', Controllers.SessionController.destroy)
 
-routes.get('/app/dashboard', (req, res) => {
-  return res.render('dashboard')
-})
+routes.get('/app/dashboard', Controllers.DashboardController.index)
 
 module.exports = routes

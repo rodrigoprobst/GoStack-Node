@@ -188,16 +188,23 @@ ul.providers {
   list-style: none;
   display: flex;
   flex-direction: column;
+  max-height: 60vh;
+  overflow-y: scroll;
+  margin-bottom: 20px;
 }
 
 .provider {
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 4px;
-  margin-bottom: 20px;
+  margin-top: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.provider:first-child {
+  margin-top: 0px;
 }
 
 .provider div {
