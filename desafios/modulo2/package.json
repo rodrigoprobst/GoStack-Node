@@ -13,7 +13,8 @@
   },
   "license": "MIT",
   "scripts": {
-    "start": "nodemon src/index.js -w .env -w *.js"
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js -w .env -w *.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
